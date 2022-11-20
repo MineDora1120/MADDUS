@@ -54,27 +54,30 @@ with open(filepath, 'r') as f:
         
         #print(click)
         if DC < 0:
-            if data['log'] == "true": print(f'마우스 아래버튼을 눌러, {down}이(가) 실행되었어요!')
             if data['down']['type'] == 'press':
                 try:
                     pyautogui.press(f"{data['down']['firstkey']}")
+                    if data['log'] == "true": print(f'마우스 아래버튼을 눌러, {down}이(가) 실행되었어요!')
                 except:
                     print('실행 도중 오류가 발생했어요. config를 제대로 입력했는지 확인해주세요!')
             else:
                 try:
                     pyautogui.hotkey(f"{data['down']['firstkey']}", f"{data['down']['secondkey']}")
+                    if data['log'] == "true": print(f'마우스 아래버튼을 눌러, {down}이(가) 실행되었어요!')
                 except:
                     print('실행 도중 오류가 발생했어요. config를 제대로 입력했는지 확인해주시고, 이 키를 사용할 상황이였는지 확인해주세요.')
+            
 
         if UC < 0:
-            if data['log'] == "true": print(f'마우스 위버튼을 눌러, {up}이(가) 실행되었어요!')
             if data['up']['type'] == 'press':
                 try:
                     pyautogui.press(f"{data['up']['firstkey']}")
+                    if data['log'] == "true": print(f'마우스 위버튼을 눌러, {up}이(가) 실행되었어요!')
                 except:
                     print('실행 도중 오류가 발생했어요. config를 제대로 입력했는지 확인해주세요!')
             else:
                 try:
                     pyautogui.hotkey(f"{data['up']['firstkey']}", f"{data['up']['secondkey']}")
+                    if data['log'] == "true": print(f'마우스 위버튼을 눌러, {up}이(가) 실행되었어요!')
                 except:
                     print('실행 도중 오류가 발생했어요. config를 제대로 입력했는지 확인해주시고, 이 키를 사용할 상황이였는지 확인해주세요.')
